@@ -17,5 +17,7 @@ export class UserComponent {
   }
 
   ngOnInit(){}
-
+  public logOut(){
+    this.adalService.logOut();
+  }
 }

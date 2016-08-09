@@ -16,7 +16,7 @@ const routes: RouterConfig = [
 
     {
         path: 'home',
-        component: UserComponent
+        component: UserComponent,
     }
 ];
 

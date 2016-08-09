@@ -14,7 +14,7 @@ var routes = [
     },
     {
         path: 'home',
-        component: user_component_1.UserComponent
+        component: user_component_1.UserComponent,
     }
 ];
 exports.appRouterProviders = [

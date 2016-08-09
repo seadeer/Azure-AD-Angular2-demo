@@ -16,6 +16,9 @@ var UserComponent = (function () {
         this.adalService = adalService;
     }
     UserComponent.prototype.ngOnInit = function () { };
+    UserComponent.prototype.logOut = function () {
+        this.adalService.logOut();
+    };
     UserComponent = __decorate([
         core_1.Component({
             selector: 'user-info',
