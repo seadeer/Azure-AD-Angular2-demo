@@ -9,18 +9,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var token_1 = require('./token');
+var core_2 = require('angular2-adal/core');
+var protected_directive_1 = require("./directives/protected.directive");
 var UserComponent = (function () {
-    function UserComponent(userInfo) {
+    function UserComponent(adalService) {
+        this.adalService = adalService;
     }
     UserComponent.prototype.ngOnInit = function () { };
     UserComponent = __decorate([
         core_1.Component({
             selector: 'user-info',
-            templateUrl: 'user.component.html',
-            styleUrls: ['app.component.css']
+            templateUrl: 'app/user.component.html',
+            directives: [protected_directive_1.ProtectedDirective],
         }), 
-        __metadata('design:paramtypes', [token_1.Token])
+        __metadata('design:paramtypes', [core_2.AdalService])
     ], UserComponent);
     return UserComponent;
 }());

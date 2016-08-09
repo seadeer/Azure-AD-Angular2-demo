@@ -15,9 +15,9 @@ var SecretService = (function () {
     Object.defineProperty(SecretService.prototype, "adalConfig", {
         get: function () {
             return {
-                tenant: 'xxxxxx.onmicrosoft.com',
-                clientId: '00000000-0000-0000-0000-000000000000',
-                redirectUri: window.location.origin + '/',
+                tenant: 'seadeergmail.onmicrosoft.com',
+                clientId: 'ecd5b8b6-8328-4da4-9f5c-fc5677152434',
+                redirectUri: window.location.origin + '/home',
                 postLogoutRedirectUri: window.location.origin + '/'
             };
         },

@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var core_2 = require('angular2-adal/core');
-var router_deprecated_1 = require("@angular/router-deprecated");
+var router_1 = require("@angular/router");
 var common_1 = require("@angular/common");
 var ProtectedDirective = (function () {
     function ProtectedDirective(adalService, router, location) {
@@ -19,13 +19,15 @@ var ProtectedDirective = (function () {
         this.location = location;
         console.log('Entering protected');
         if (!this.adalService.userInfo.isAuthenticated) {
+            this.location.replaceState('/');
+            this.router.navigate(['login']);
         }
     }
     ProtectedDirective = __decorate([
         core_1.Directive({
             selector: '[protected]'
         }), 
-        __metadata('design:paramtypes', [core_2.AdalService, router_deprecated_1.Router, common_1.Location])
+        __metadata('design:paramtypes', [core_2.AdalService, router_1.Router, common_1.Location])
     ], ProtectedDirective);
     return ProtectedDirective;
 }());

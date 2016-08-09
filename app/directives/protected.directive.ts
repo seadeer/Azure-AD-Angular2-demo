@@ -1,6 +1,6 @@
 import {Directive} from '@angular/core';
 import {AdalService} from 'angular2-adal/core';
-import {Router} from "@angular/router-deprecated";
+import {Router} from "@angular/router";
 import {Location} from "@angular/common";
 
 @Directive({
@@ -15,8 +15,8 @@ export class ProtectedDirective {
     ) {
         console.log('Entering protected');
         if (!this.adalService.userInfo.isAuthenticated) {
-            //this.location.replaceState('/');
-            //this.router.navigate(['Welcome']);
+            this.location.replaceState('/');
+            this.router.navigate(['login']);
         }
     }
 }

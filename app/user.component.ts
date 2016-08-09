@@ -1,15 +1,20 @@
 import { Component } from '@angular/core';
 import { Token } from './token';
+import { AdalService } from 'angular2-adal/core';
+import { ProtectedDirective } from "./directives/protected.directive";
 
 @Component({
   selector: 'user-info',
-  templateUrl: 'user.component.html',
-  styleUrls: ['app.component.css']
+  templateUrl: 'app/user.component.html',
+  directives: [ProtectedDirective],
 })
 export class UserComponent {
   constructor(
-    userInfo: Token
-  ){ }
+    private adalService: AdalService,
+    //private userInfo: Token
+  ){ 
+
+  }
 
   ngOnInit(){}
 
